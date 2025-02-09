@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form</title>
+    <link rel="stylesheet" href="Addmission form.css">
+</head>
+<body>
+    <center>
+        <div class="h1">
+            <h1>Admission Form</h1>
+        </div>
+    </center>
+    <center>
+        <form id="admissionForm">
+            <h2>Personal Data</h2>
+            <div class="personal">
+                <p>Name <input type="text" name="Name" required></p>
+                <p>Father Name <input type="text" name="father Name" required></p>
+                <p>CNIC <input type="text" name="CNIC" required></p>
+                <p>Age <input type="number" name="Age" required></p>
+                <p>Address <input type="text" name="Address" required></p>
+                <p>Email <input type="email" name="Email" required></p>
+                <p>Phone Number <input type="tel" name="Phone number" required></p>
+                <p>Gender:  
+                    Male <input type="radio" name="Gender" value="Male">
+                    Female <input type="radio" name="Gender" value="Female">
+                    Other <input type="radio" name="Gender" value="Other">
+                </p>
+                <p>Date of Birth <input type="date" name="DOF"></p>
+            </div>
+
+            <h2>Academic Data</h2>
+            <p>Matric Marks <input type="number" name="Matric marks" required></p>
+            <p>Intermediate Marks <input type="number" name="intermediate marks" required></p>
+            <p>Intermediate Roll Number <input type="number" name="roll number" required></p>
+            <p>College Name <input type="text" name="college name" required></p>
+            <p>Subject <input type="text" name="Subject" required></p>
+            <p>Program:
+                <select name="Program" required>
+                    <option value="">Select any one</option>
+                    <option value="IT">IT</option>
+                    <option value="CS">CS</option>
+                    <option value="DS">DS</option>
+                    <option value="SE">SE</option>
+                </select>
+            </p>
+            
+            <button type="submit">Submit</button> <!-- Submit Button -->
+        </form>
+    </center>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("Codequeen765@gmail.com"); // Replace with your EmailJS User ID
+        })();
+
+        document.getElementById("admissionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            let formData = {
+                name: document.querySelector('input[name="Name"]').value,
+                father_name: document.querySelector('input[name="father Name"]').value,
+                cnic: document.querySelector('input[name="CNIC"]').value,
+                age: document.querySelector('input[name="Age"]').value,
+                address: document.querySelector('input[name="Address"]').value,
+                email: document.querySelector('input[name="Email"]').value,
+                phone: document.querySelector('input[name="Phone number"]').value,
+                gender: document.querySelector('input[name="Gender"]:checked')?.value || "Not specified",
+                dob: document.querySelector('input[name="DOF"]').value,
+                matric_marks: document.querySelector('input[name="Matric marks"]').value,
+                inter_marks: document.querySelector('input[name="intermediate marks"]').value,
+                inter_roll_no: document.querySelector('input[name="roll number"]').value,
+                college_name: document.querySelector('input[name="college name"]').value,
+                subject: document.querySelector('input[name="Subject"]').value,
+                program: document.querySelector('select[name="Program"]').value
+            };
+
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData)
+                .then(response => {
+                    alert("Form submitted successfully!");
+                })
+                .catch(error => {
+                    alert("Failed to submit the form. Try again.");
+                    console.error("Error:", error);
+                });
+        });
+    </script>
+</body>
+</html>

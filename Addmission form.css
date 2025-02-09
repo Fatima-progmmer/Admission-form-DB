@@ -1,0 +1,142 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f2f2f2;
+}
+
+.h1 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 1.7em;
+}
+
+form {
+    padding-left: 70px;
+    padding-right: 70px;
+    border: 1px solid #d19f98;
+    background-color: #e3c3bf;
+    width: 500px;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+.form{
+    align-items: center;
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    color:gray;
+    font-size: 1.5em;
+}
+
+form p {
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 1em;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"], 
+form input[type="number"],
+form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+
+form input[type="radio"] {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+form select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Button{
+    text-align: center;
+    margin-top: 50px;
+}
+
+form .Button {
+    padding: 10px 20px;
+    background-color: #575757;
+    color: rgb(244, 191, 191);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        width: 90%; /* Adjusts form width for smaller screens */
+        padding: 30px; /* Reduces padding for better spacing */
+    }
+
+    .h1 {
+        font-size: 1.5em; /* Adjusts heading size */
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    form h2 {
+        font-size: 1.3em;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"], 
+    form input[type="number"],
+    form input[type="date"],
+    form select {
+        padding: 8px; /* Reduces padding to fit smaller screens */
+    }
+
+    .Button {
+        margin-top: 30px;
+    }
+
+    form .Button {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 100%; /* Makes form full width on very small screens */
+        padding: 20px;
+    }
+
+    .h1 {
+        font-size: 1.3em;
+    }
+
+    form h2 {
+        font-size: 1.2em;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"], 
+    form input[type="number"],
+    form input[type="date"],
+    form select {
+        padding: 7px;
+    }
+
+    form .Button {
+        padding: 7px 14px;
+    }
+}
+
